@@ -1,22 +1,35 @@
-# Helsingin Sanomat news archive scraper
+# Helsingin Sanomat news headline analysis
 
-# NOTE: work in progress
+# NOTE: In line with the general terms and conditions of Sanoma Media Finland, use of this script is not allowed without formal consent from Sanoma Media Finland.
 
-### Introduction
+### Description
 
-This script allows to automate queries and fetch news article data from Helsingin Sanomat news archive. Only the title and time of publishing are returned.
+This script allows to automate queries and fetch news headline data from Helsingin Sanomat news archive. Only the title and time of publishing are returned.
 
 
 ### Disclaimer
 
-Helsingin Sanomat (Sanoma Media Finland) owns the copyright to all the articles. No infringement of these copyrights is intentional. This is only for personal use and not for public distribution.
+Helsingin Sanomat (Sanoma Media Finland) owns the copyright to all articles. No infringement of these copyrights is intentional. This script is strictly for personal use and not for public distribution.
+
+Use of this script is subject to the general terms and conditions of Sanoma Media Finland, found here (in Finnish):
+https://oma.sanoma.fi/v2/aihe/tilaus-ja-kayttoehdot/kayttoehdot
+
+In line with the above terms and conditions, use of this script is not allowed without formal consent from Sanoma Media Finland.
 
 
-### How to use
+### How It Works
 
-Install the required packages (namely Selenium) and run the script.
+Install Chrome and the required packages.
 
-Once prompted, type in the search word and press enter. A csv file is created locally, which includes all the articles (titles) resulting from that query.
+Run the script.
+
+Once prompted, type in the search term and number of headlines to be returned, and press enter. 
+
+The driver opens a tab in Chrome, press OK to accept cookies (haven't been able to automate this yet) and let the script run.
+
+A csv file is created, which includes all the headlines resulting from that query.
+
+
 
 
 
