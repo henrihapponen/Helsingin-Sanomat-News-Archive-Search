@@ -1,6 +1,6 @@
 # Helsingin Sanomat News Archive Search
 
-This script allows to automate queries and fetch news headline data from Helsingin Sanomat news archive. Only the title and time of publishing are returned.
+This script allows to automate queries and fetch news headline data from Helsingin Sanomat news archive. Only the headline (title) and the time of publishing are returned.
 
 The script returns a csv file including three columns: "Article number", "Time of publishing", and "Headline".
 
