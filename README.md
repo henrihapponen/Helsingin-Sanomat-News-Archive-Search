@@ -1,4 +1,4 @@
-# Helsingin Sanomat news headline analysis
+# Helsingin Sanomat news archive search
 
 # NOTE: In line with the general terms and conditions of Sanoma Media Finland, use of this script is prohibited without formal consent from Sanoma Media Finland.
 
