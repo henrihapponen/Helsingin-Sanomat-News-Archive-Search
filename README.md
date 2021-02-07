@@ -1,7 +1,12 @@
 # Helsingin Sanomat News Archive Search
 
+This script allows to automate queries and fetch news headline data from Helsingin Sanomat news archive. Only the title and time of publishing are returned.
 
-### Disclaimer
+The script returns a csv file including three columns: "Article number", "Time of publishing", and "Headline".
+
+
+
+# Disclaimer
 
 Helsingin Sanomat (Sanoma Media Finland) owns the copyright to all articles. No infringement of these copyrights is intentional.
 
@@ -12,15 +17,7 @@ In line with the terms and conditions above, use of this script is prohibited wi
 
 
 
-### Description
-
-This script allows to automate queries and fetch news headline data from Helsingin Sanomat news archive. Only the title and time of publishing are returned.
-
-The script returns a csv file including three columns: "Article number", "Time of publishing", and "Headline".
-
-
-
-### How It Works
+# How It Works
 
 Install Chrome and the required packages.
 
@@ -33,7 +30,8 @@ The driver opens a tab in Chrome, press OK to accept cookies (haven't been able 
 A csv file is created, which includes all the headlines resulting from that query.
 
 
-### Contribute
+
+# How to Contribute
 
 Like most hobby projects, this script is not perfect. All contributions are welcome.
 
