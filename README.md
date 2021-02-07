@@ -33,7 +33,13 @@ The driver opens a tab in Chrome, press OK to accept cookies (haven't been able 
 A csv file is created, which includes all the headlines resulting from that query.
 
 
+### Contribute
 
+Like most hobby projects, this script is not perfect. All contributions are welcome.
+
+Issues that I haven't solved yet:
+- Automatically accept cookies when the browser opens.
+- Compute the maximum 'acceptable load more times' quicker.
 
 
 
