@@ -7,7 +7,7 @@
 # conditions of Sanoma Media Finland. Use of this script is prohibited without first obtaining
 # formal consent from Sanoma Media Finland.
 
-# NOTE: There's one issue with the website. When you load the last page of results,
+# NOTE: There's one big issue with the website. When you load the last page of results,
 # all results disappear. The only solution I've found to work is to first calculate
 # the maximum number of 'acceptable' load more times and only then reload the pages
 # and fetch the headline data.
