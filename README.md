@@ -36,7 +36,7 @@ A csv file is created, which includes all the headlines resulting from that quer
 Like most hobby projects, this script is not perfect. All contributions are welcome.
 
 Issues that I haven't solved yet:
-- Automate accepting cookie popup when the browser opens. This seems to be trickier than I first thought.
+- Automate accepting the cookie popup window when the browser opens. This seems to be quite tricky.
 - Figure out a better way to compute the maximum 'acceptable load more times'.
 
 
