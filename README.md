@@ -13,7 +13,7 @@ Helsingin Sanomat (Sanoma Media Finland) owns the copyright to all articles. No 
 Use of this script is subject to the general terms and conditions of Sanoma Media Finland, found here (only in Finnish):
 https://oma.sanoma.fi/v2/aihe/tilaus-ja-kayttoehdot/kayttoehdot
 
-In line with the terms and conditions above, use of this script is prohibited without first obtaining formal consent from Sanoma Media Finland. This permission can be obtained by contacting dev@hs.fi.
+In line with the terms and conditions above, use of this script is prohibited without first obtaining formal consent from Sanoma Media Finland. This permission can be obtained by contacting Helsingin Sanomat.
 
 
 
