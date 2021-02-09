@@ -21,7 +21,7 @@ In line with the terms and conditions above, use of this script is prohibited wi
 
 Install Chrome and the required packages.
 
-Run the script.
+Run `hs-news-archive-scrape.py`
 
 Once prompted, type in a search term and the number of headlines you want returned, and press enter. 
 
