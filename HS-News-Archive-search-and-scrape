@@ -1,14 +1,14 @@
 # This script automates a query into historic news articles and fetches headline data
 # from Helsingin Sanomat news archive at https://www.hs.fi/arkisto/
-# Only the headlines and their dates of publishing are returned.
-# You can search for names, words etc to appear in the articles and select how many headlines you want returned
+# Only the headlines and their dates of publishing are returned (for copyright purposes).
+# You can search for names, words etc to appear in the articles and select how many headlines you want returned.
 
 # IMPORTANT: Before running, read the README file for the disclaimer and for the general terms and
 # conditions of Sanoma Media Finland. Use of this script is prohibited without first obtaining
 # formal consent from Sanoma Media Finland.
 
 # NOTE: There's one big issue with the website. When you load the last page of results,
-# all results disappear. The only solution I've found to work is to first calculate
+# all results disappear. The only work-around I've found is to first calculate
 # the maximum number of 'acceptable' load more times and only then reload the pages
 # and fetch the headline data.
 
@@ -39,8 +39,8 @@ driver.get("https://www.hs.fi/arkisto/")
 time.sleep(5)
 
 
-# Accept cookies, haven't figured out how yet
-# For now, has to be done manually when the website opens
+# Accept cookies, haven't been able to make this work yet...
+# For now, has to be done manually when the browser opens
 
 # cookie_window = driver.window_handles
 # driver.switch_to.window(str(cookie_window))
@@ -86,7 +86,7 @@ time.sleep(3)
 
 
 # Next we need to establish the maximum number of 'acceptable' load more times.
-# This is done by counting each time we press of the load more button until the page crashes
+# This is done by counting each press of the load more button until the page crashes
 # The following will press the 'Load More' button as long as it keeps appearing on the page
 load_more_times = 0
 while True:
@@ -101,7 +101,7 @@ while True:
 
 time.sleep(2)
 
-# This is how many 'acceptable' load more times we are allowed in the actual run that will follow
+# This is how many 'acceptable' load more times we are allowed in the actual run that will follow soon
 acceptable_load_more_times = load_more_times - 1
 
 # Quit the driver
@@ -156,7 +156,7 @@ search_bar.send_keys(Keys.RETURN)
 
 time.sleep(3)
 
-# Load all pages (except for the last one which makes all results disappear)
+# Load all pages except for the last one which makes all results disappear
 for i in range(acceptable_load_more_times):
     load_more_button = driver.find_element_by_xpath(
         "/html/body/div[1]/div[2]/div[3]/div[1]/div[2]/main/section[4]/section/div[2]/section/div/button")
