@@ -13,7 +13,7 @@ Helsingin Sanomat (Sanoma Media Finland) owns the copyright to all articles. No 
 Use of this script is subject to the general terms and conditions of Sanoma Media Finland, found here (only in Finnish):
 https://oma.sanoma.fi/v2/aihe/tilaus-ja-kayttoehdot/kayttoehdot
 
-In line with the terms and conditions above, use of this script is prohibited without first obtaining formal consent from Sanoma Media Finland. This permission can be obtained by contacting Helsingin Sanomat.
+To comply with their terms and conditions, use of this script is prohibited without permission from Sanoma Media Finland. This permission can be obtained by contacting Helsingin Sanomat directly.
 
 
 
@@ -25,7 +25,7 @@ Run `hs-news-archive-scrape.py`
 
 Once prompted, type in a search term and the number of headlines you want returned, and press enter. 
 
-The WebDriver opens a tab in Chrome, press OK to accept cookies (haven't been able to automate this yet) and let it run.
+A tab in Chrome is opened, press OK to accept cookies (haven't been able to automate this yet) and let it run.
 
 A csv file is created, which includes all the headlines resulting from that query.
 
@@ -36,7 +36,7 @@ A csv file is created, which includes all the headlines resulting from that quer
 Like most hobby projects, this script is not perfect. All contributions are welcome.
 
 Issues that I haven't solved yet:
-- Automate accepting the cookie popup window when the browser opens. This seems to be quite tricky.
+- Automatically handle the cookie popup window when the browser opens. This seems to be quite tricky.
 - Figure out an easier way to compute the maximum 'acceptable load more times'.
 
 
