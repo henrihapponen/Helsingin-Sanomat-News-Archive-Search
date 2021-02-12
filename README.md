@@ -28,9 +28,9 @@ Run `hs-news-archive-scrape.py`
 
 Once prompted, type in a search term and the number of headlines you want returned.
 
-Next type in what time period do you want to use ('Any' or 'Custom')
+Next type in the time period you want to use ('Any' or 'Custom')
 - 'Any': all headlines (roughly from 1990 onwards) will be returned
-- 'Custom': you will be asked for start and end dates
+- 'Custom': you will be asked to select your own start and end dates
 
 Once these are typed in, a tab in Chrome opens, press OK to accept cookies (haven't been able to automate this yet) and let it run.
 
