@@ -2,7 +2,10 @@
 
 This script allows to automate queries and fetch news headline data from Helsingin Sanomat News Archive. Only the headline (title) and the time of publishing are returned.
 
-The script returns a csv file including three columns: article number, time of publishing (ISO 8610), and headline.
+The script returns a csv file including three columns: 
+- article number
+- time of publishing (ISO 8610)
+- headline.
 
 
 
