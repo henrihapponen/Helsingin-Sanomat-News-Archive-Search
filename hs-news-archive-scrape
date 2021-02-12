@@ -29,7 +29,7 @@ search_term = input("Search term:\n")
 no_of_articles_wanted = int(input("How many headlines?\n"))
 
 # Create a local WebDriver
-path = "/Users/henrihapponen/chromedriver"
+path = # add the desired path here
 driver = webdriver.Chrome(path)
 
 # Open the website of Helsingin Sanomat news archives
