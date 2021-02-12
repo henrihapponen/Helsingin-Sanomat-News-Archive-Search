@@ -33,10 +33,10 @@ A csv file is created, which includes all the headlines resulting from that quer
 
 # How to Contribute
 
-Like most hobby projects, this script is not perfect. All contributions are welcome.
+Like most hobby projects, this script is far from perfect. All contributions are welcome.
 
 Issues that I haven't solved yet:
-- Automatically handle the cookie popup window when the browser opens. This seems to be quite tricky.
+- Automatically handle the cookie popup window when the browser opens. This seems a bit tricky.
 - Figure out an easier way to compute the maximum 'acceptable load more times'.
 
 
