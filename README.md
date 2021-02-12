@@ -10,10 +10,10 @@ The script returns a csv file including three columns: article number, time of p
 
 Helsingin Sanomat (Sanoma Media Finland) owns the copyright to all articles. No infringement of these copyrights is intentional.
 
-Use of this script is subject to the general terms and conditions of Sanoma Media Finland, found here (only in Finnish):
+Use of this script is subject to the General Terms and Conditions of Sanoma Media Finland, found here (only in Finnish):
 https://oma.sanoma.fi/v2/aihe/tilaus-ja-kayttoehdot/kayttoehdot
 
-To comply with their terms and conditions, use of this script is prohibited without permission from Sanoma Media Finland. This permission can be obtained by contacting Helsingin Sanomat directly.
+To comply with the Terms and Conditions, use of this script is prohibited without permission from Sanoma Media Finland. This permission can be obtained by contacting Helsingin Sanomat directly.
 
 
 
