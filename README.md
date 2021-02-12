@@ -22,7 +22,7 @@ To comply with their terms and conditions, use of this script is prohibited with
 Install Chrome and the required packages.
 
 Insert a path in row 58 for the WebDriver that will be created
-- For example `path` = /Users/username/webdriver
+- For example `path = "/Users/username/webdriver"`
 
 Run `hs-news-archive-scrape.py`
 
