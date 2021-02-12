@@ -65,7 +65,7 @@ time_select.select_by_visible_text("Milloin tahansa")
 # If we were to use "set start and end dates" (NOTE: not functional yet)
 # time_select.select_by_visible_text("Oma aikaväli")
 
-# Not sure how I could fix the start and end dates, these seem to be very tricky to work with
+# Not sure how I could fix the start and end dates, these are very tricky to work with
 # date_picker = driver.find_element_by_class_name(
 #   "jsx-3495263876 calendar-icon absolute pointer-events-none bg-center bg-contain bg-no-repeat")
 # date_picker.click()
@@ -112,7 +112,7 @@ print("Acceptable Load More times: " + str(acceptable_load_more_times))
 
 
 # Now we repeat the query but use the 'Acceptable Load More Times'
-# and also run the actual scraper.
+# and also scrape the headlines.
 
 # Create a local WebDriver (again)
 path = "/Users/henrihapponen/chromedriver"
@@ -205,7 +205,7 @@ for i in range(no_of_articles_wanted):
         article_num += 1
 
 
-# Then we read the data into a Pandas data frame
+# Then we read the data into a data frame
 articles_df = pd.DataFrame(articles)
 
 # Optional
