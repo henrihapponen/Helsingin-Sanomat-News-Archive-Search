@@ -51,6 +51,7 @@ while True:
         break
     else:
         print("Error: make sure you type either 'Any' or 'Custom'")
+        time.sleep(1)
         continue
 
 # Create a local WebDriver
