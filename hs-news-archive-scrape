@@ -1,14 +1,14 @@
 # This script automates a query into historic news articles and fetches headline data
 # from Helsingin Sanomat news archive at https://www.hs.fi/arkisto/
-# Only the headlines and their dates of publishing are returned (for copyright purposes).
-# You can search for names, words etc to appear in the articles and select how many headlines you want returned.
+# Only the headlines and their dates of publishing are returned.
+# You can search for names, words etc to appear in the articles and select how many headlines you want returned
 
 # IMPORTANT: Before running, read the README file for the disclaimer and for the general terms and
 # conditions of Sanoma Media Finland. Use of this script is prohibited without first obtaining
 # formal consent from Sanoma Media Finland.
 
-# NOTE: There's one big issue with the website. When you load the last page of results,
-# all results disappear. The only work-around I've found is to first calculate
+# NOTE: There's one issue with the website. When you load the last page of results,
+# all results disappear. The only solution I've found to work is to first calculate
 # the maximum number of 'acceptable' load more times and only then reload the pages
 # and fetch the headline data.
 
@@ -22,25 +22,51 @@ import time
 import pandas as pd
 
 
+# Open the website of Helsingin Sanomat news archives
+# driver.get("https://www.hs.fi/arkisto/")
+
+
 # Start by typing in the search term you want to use (e.g. "koronavirus", "elon musk", "tekoäly")
-search_term = input("Search term:\n")
+search_term = str(input("Search term:\n"))
 
 # ... and how many articles you want to get returned
 no_of_articles_wanted = int(input("How many headlines?\n"))
 
+# Select time period
+# If 'Any' then all articles will be retrieved
+# If 'Custom' then the start and end dates will be asked
+while True:
+    time_select = str(input("Select a time period ('Any' or 'Custom'): "))
+    if time_select in ["Any", "any", "ANY"]:
+        period = "whenever"
+        query_url = "https://www.hs.fi/haku/?query=" + search_term \
+                    + "&category=kaikki&period=whenever"
+        break
+    elif time_select in ["Custom", "custom", "CUSTOM"]:
+        start_date = str(input("Select start date (format YYYY-MM-DD): "))
+        end_date = str(input("Select end date (format YYYY-MM-DD): "))
+        query_url = "https://www.hs.fi/haku/?query=" + search_term \
+                    + "&category=kaikki&period=custom&order=new&startDate=" + start_date \
+                    + "&endDate=" + end_date
+        break
+    else:
+        print("Error: make sure you type either 'Any' or 'Custom'")
+        continue
+
 # Create a local WebDriver
-path = # add the desired path here
+# Insert a path for the driver, such as /Users/username/driver
+path = "INSERT YOUR PATH HERE"
 driver = webdriver.Chrome(path)
 
-# Open the website of Helsingin Sanomat news archives
-driver.get("https://www.hs.fi/arkisto/")
+# Send the query
+driver.get(query_url)
 
 # Wait for the page to load
 time.sleep(5)
 
 
-# Accept cookies, haven't been able to make this work yet...
-# For now, has to be done manually when the browser opens
+# Accept cookies, haven't figured out how yet
+# For now, has to be done manually when the website opens
 
 # cookie_window = driver.window_handles
 # driver.switch_to.window(str(cookie_window))
@@ -49,44 +75,8 @@ time.sleep(5)
 # cookies_ok_button.click()
 
 
-# Locate the search bar and date selection field
-search_bar = driver.find_element_by_id("main-search")
-time_select_menu = driver.find_element_by_id("search-time-select")
-time_select = Select(time_select_menu)
-
-# Send the search term into the search bar
-search_bar.send_keys(search_term)
-
-# Select the time frame
-# For now we have to use "published any time" so no need to select further start and end dates
-
-time_select.select_by_visible_text("Milloin tahansa")
-
-# If we were to use "set start and end dates" (NOTE: not functional yet)
-# time_select.select_by_visible_text("Oma aikaväli")
-
-# Not sure how I could fix the start and end dates, these are very tricky to work with
-# date_picker = driver.find_element_by_class_name(
-#   "jsx-3495263876 calendar-icon absolute pointer-events-none bg-center bg-contain bg-no-repeat")
-# date_picker.click()
-
-# start_date = driver.find_element_by_id("search-start-date")
-# end_date = driver.find_element_by_id("search-end-date")
-
-# These don't work, it's annoyingly close but the year doesn't quite work
-# start_date.send_keys("2005-11-11")
-# time.sleep(1)
-# end_date.send_keys("01-01-2015")
-
-# Send the query and load the first 'page' of results
-search_bar.send_keys(Keys.RETURN)
-
-# Wait for the results to load
-time.sleep(3)
-
-
 # Next we need to establish the maximum number of 'acceptable' load more times.
-# This is done by counting each press of the load more button until the page crashes
+# This is done by counting each time we press of the load more button until the page crashes
 # The following will press the 'Load More' button as long as it keeps appearing on the page
 load_more_times = 0
 while True:
@@ -99,9 +89,9 @@ while True:
     except NoSuchElementException:
         break
 
-time.sleep(2)
+time.sleep(1)
 
-# This is how many 'acceptable' load more times we are allowed in the actual run that will follow soon
+# This is how many 'acceptable' load more times we are allowed in the actual run that will follow
 acceptable_load_more_times = load_more_times - 1
 
 # Quit the driver
@@ -112,51 +102,20 @@ print("Acceptable Load More times: " + str(acceptable_load_more_times))
 
 
 # Now we repeat the query but use the 'Acceptable Load More Times'
-# and also scrape the headlines.
+# and also run the actual scraper.
 
 # Create a local WebDriver (again)
 path = "/Users/henrihapponen/chromedriver"
 driver = webdriver.Chrome(path)
 
-# Open the website of Helsingin Sanomat news archives (again)
-driver.get("https://www.hs.fi/arkisto/")
+# Send the same query
+driver.get(query_url)
 
 # Wait for the page to load
-time.sleep(5)
+time.sleep(4)
 
-# Locate our search bar and date selection field
-search_bar = driver.find_element_by_id("main-search")
-time_select_menu = driver.find_element_by_id("search-time-select")
-time_select = Select(time_select_menu)
 
-# Search term is already set earlier so we can send that to the search bar
-search_bar.send_keys(search_term)
-
-# The same time frame issue applies, we have to use "published any time"
-time_select.select_by_visible_text("Milloin tahansa")
-
-# If we were to use "set start and end dates" (NOTE: not functional yet)
-# time_select.select_by_visible_text("Oma aikaväli")
-
-# Not sure how I could fix the start and end dates, these seem to be very tricky to work with
-# date_picker = driver.find_element_by_class_name(
-#   "jsx-3495263876 calendar-icon absolute pointer-events-none bg-center bg-contain bg-no-repeat")
-# date_picker.click()
-
-# start_date = driver.find_element_by_id("search-start-date")
-# end_date = driver.find_element_by_id("search-end-date")
-
-# These don't work, it's annoyingly close but the year doesn't work
-# start_date.send_keys("2005-11-11")
-# time.sleep(1)
-# end_date.send_keys("01-01-2015")
-
-# Send the query
-search_bar.send_keys(Keys.RETURN)
-
-time.sleep(3)
-
-# Load all pages except for the last one which makes all results disappear
+# Load all pages (except for the last one which makes all results disappear)
 for i in range(acceptable_load_more_times):
     load_more_button = driver.find_element_by_xpath(
         "/html/body/div[1]/div[2]/div[3]/div[1]/div[2]/main/section[4]/section/div[2]/section/div/button")
@@ -166,7 +125,7 @@ for i in range(acceptable_load_more_times):
 
 # Now that all pages are loaded, next we fetch all the headlines and their dates of publishing
 # and append our list with dictionaries for each entry.
-# Have to use 'try' because there are a few different xpath patterns for the articles...
+# Have to use 'try' since there are a few different xpath patterns for the articles...
 
 articles = []
 article_num = 1
