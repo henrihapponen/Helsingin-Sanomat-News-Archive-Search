@@ -26,11 +26,15 @@ Insert a path in row 58 for the WebDriver that will be created
 
 Run `hs-news-archive-scrape.py`
 
-Once prompted, type in a search term and the number of headlines you want returned, and press enter. 
+Once prompted, type in a search term and the number of headlines you want returned.
 
-A tab in Chrome is opened, press OK to accept cookies (haven't been able to automate this yet) and let it run.
+Next type in what time period do you want to use ('Any' or 'Custom')
+- 'Any': all headlines (roughly from 1990 onwards) will be returned
+- 'Custom': you will be asked for start and end dates
 
-A csv file is created, which includes all the headlines resulting from that query.
+Once these are typed in, a tab in Chrome opens, press OK to accept cookies (haven't been able to automate this yet) and let it run.
+
+At the end, a csv file is created, which includes all the headlines resulting from that query.
 
 
 
