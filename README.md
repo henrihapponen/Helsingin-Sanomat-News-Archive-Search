@@ -22,7 +22,8 @@ To comply with the Terms and Conditions, use of this script is prohibited withou
 
 # How It Works
 
-Install Chrome and the required modules.
+Install Chrome (or use other browsers, see https://www.selenium.dev/documentation/en/webdriver/driver_requirements/ for more information).
+Also install the required modules.
 
 Insert a path in row 58 for the WebDriver that will be created
 - For example `path = "/Users/username/webdriver"`
