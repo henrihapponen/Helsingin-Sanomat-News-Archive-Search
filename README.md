@@ -30,7 +30,7 @@ Make sure you download the correct ChromeDriver version according to the version
 
 Save the downloaded file wherever you like, but make sure that you know its location, because the filepath is going to get referenced in the script.
 
-Insert this filepath in row 24 of `hs-news-archive-scrape.py`
+Insert this filepath in line 24 of `hs-news-archive-scrape.py`
 
 For example: `path = "C:/Users/username/webdriver"`
 
