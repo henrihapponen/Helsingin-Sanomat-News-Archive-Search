@@ -26,7 +26,7 @@ To comply with the Terms and Conditions, use of this script is prohibited withou
 
 2. Install ChromeDriver at https://chromedriver.chromium.org/downloads
 
-Make sure you download the correct ChromeDriver version according the version of Chrome you have installed (and your operating system)
+Make sure you download the correct ChromeDriver version according to the version of Chrome you have installed (and your operating system)
 
 Save the downloaded file wherever you like, but make sure that you know its location, because the filepath is going to get referenced in the script.
 
@@ -49,7 +49,7 @@ Next type in the time period you want to use ('Any' or 'Custom')
 
 Once these are typed in, a tab in Chrome opens, press OK to accept cookies (haven't been able to automate this yet) and let it run.
 
-(The script will run twice because of an issue with the website: once the last page is loaded, all results disappear...)
+(The ChromeDriver will run twice because of an issue with the website: once the last page is loaded, all results disappear...)
 
 At the end, a csv file is created, which includes all the headlines resulting from that query.
 
