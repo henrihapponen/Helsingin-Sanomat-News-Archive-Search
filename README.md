@@ -27,11 +27,9 @@ To comply with the Terms and Conditions, use of this script is prohibited withou
 2. Install ChromeDriver at https://chromedriver.chromium.org/downloads
 
 Make sure you download the correct ChromeDriver version according the version of Chrome you have installed (and your operating system)
-
 Save the downloaded file wherever you like, but make sure that you know its location, because the filepath is going to get referenced in the script.
-
 Insert this filepath in row 24 of `hs-news-archive-scrape.py`
-- For example: `path = "C:/Users/username/webdriver"`
+For example: `path = "C:/Users/username/webdriver"`
 
 3. Install the required modules and you are good to go
 
