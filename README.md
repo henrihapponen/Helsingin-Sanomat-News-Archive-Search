@@ -20,14 +20,23 @@ To comply with the Terms and Conditions, use of this script is prohibited withou
 
 
 
+# Requirements
+
+1. Install Google Chrome if not already installed (other browsers work too, but the script has to be modified).
+
+2. Install ChromeDriver at https://chromedriver.chromium.org/downloads
+
+Make sure you download the correct ChromeDriver version according the version of Chrome you have installed (and your operating system)
+
+Save the downloaded file wherever you like, but make sure that you know its location, because the filepath is going to get referenced in the script.
+
+Insert this filepath in row 24 of `hs-news-archive-scrape.py`
+- For example: `path = "C:/Users/username/webdriver"`
+
+3. Install the required modules and you are good to go
+
+
 # How It Works
-
-Install Chrome (for other browsers see https://www.selenium.dev/documentation/en/webdriver/driver_requirements/ for more information).
-
-Install the required modules.
-
-Insert a directory path in row 58 for the WebDriver
-- For example `path = "C:/Users/username/webdriver"`
 
 Run `hs-news-archive-scrape.py`
 
