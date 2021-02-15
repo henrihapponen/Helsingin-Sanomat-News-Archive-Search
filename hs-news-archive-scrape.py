@@ -20,7 +20,7 @@ import time
 import pandas as pd
 
 
-# INSERT the path used for the directory where the WebDriver will be created
+# INSERT the path where the WebDriver is saved and where it will be run
 path = "/Users/..."
 
 #Run
