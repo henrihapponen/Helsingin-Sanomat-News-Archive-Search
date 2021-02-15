@@ -9,30 +9,29 @@
 
 # NOTE: There's one issue with the website. When you load the last page of results,
 # all results disappear. The only solution I've found to work is to first calculate
-# the maximum number of 'acceptable' load more times and only then reload the pages
+# the maximum number of 'acceptable' load more times and then reload the pages
 # and fetch the headline data.
 
 
-# Import the required packages
+# Import the required modules
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.select import Select
 from selenium.common.exceptions import NoSuchElementException
 import time
 import pandas as pd
 
 
-# Open the website of Helsingin Sanomat news archives
-# driver.get("https://www.hs.fi/arkisto/")
+# INSERT the path used for the directory where the WebDriver will be created
+path = "/Users/..."
 
+#Run
 
-# Start by typing in the search term you want to use (e.g. "koronavirus", "elon musk", "tekoäly")
+# Ask for the search term to be used for the query (e.g. "koronavirus", "elon musk", "tekoäly")
 search_term = str(input("Search term:\n"))
 
-# ... and how many articles you want to get returned
+# ... and for the number of articles you want in return
 no_of_articles_wanted = int(input("How many headlines?\n"))
 
-# Select time period
+# Ask for the time period
 # If 'Any' then all articles will be retrieved
 # If 'Custom' then the start and end dates will be asked
 while True:
@@ -51,12 +50,9 @@ while True:
         break
     else:
         print("Error: make sure you type either 'Any' or 'Custom'")
-        time.sleep(1)
         continue
 
-# Create a local WebDriver
-# Insert a path for the driver, such as /Users/username/driver
-path = "INSERT YOUR PATH HERE"
+# Create a local WebDriver in the path defined in the beginning
 driver = webdriver.Chrome(path)
 
 # Send the query
@@ -68,10 +64,9 @@ time.sleep(5)
 
 # Accept cookies, haven't figured out how yet
 # For now, has to be done manually when the website opens
-
+# Some ideas, but nothing has worked:
 # cookie_window = driver.window_handles
 # driver.switch_to.window(str(cookie_window))
-
 # cookies_ok_button = driver.find_element_by_xpath("/html/body/div/div[3]/div[3]/div[2]/div/button[2]")
 # cookies_ok_button.click()
 
@@ -105,15 +100,14 @@ print("Acceptable Load More times: " + str(acceptable_load_more_times))
 # Now we repeat the query but use the 'Acceptable Load More Times'
 # and also run the actual scraper.
 
-# Create a local WebDriver (again)
-path = "/Users/henrihapponen/chromedriver"
+# Create a local WebDriver in the path defined in the beginning
 driver = webdriver.Chrome(path)
 
 # Send the same query
 driver.get(query_url)
 
 # Wait for the page to load
-time.sleep(4)
+time.sleep(5)
 
 
 # Load all pages (except for the last one which makes all results disappear)
@@ -126,7 +120,7 @@ for i in range(acceptable_load_more_times):
 
 # Now that all pages are loaded, next we fetch all the headlines and their dates of publishing
 # and append our list with dictionaries for each entry.
-# Have to use 'try' since there are a few different xpath patterns for the articles...
+# Have to use 'try' because there are a few different xpath patterns for the articles...
 
 articles = []
 article_num = 1
