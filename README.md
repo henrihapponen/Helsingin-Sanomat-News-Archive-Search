@@ -4,7 +4,7 @@ This script allows to automate queries and download news headline data from Hels
 
 The script returns a csv file with three columns: 
 - article number
-- time of publishing (ISO 8610)
+- time of publishing
 - headline.
 
 
