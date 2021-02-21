@@ -60,7 +60,7 @@ At the end, a csv file is created, which includes all the headlines resulting fr
 Like most hobby projects, this script is far from perfect. All contributions are welcome.
 
 Issues that I haven't solved yet:
-- Automatically handle the cookie popup window when the browser opens. Haven't found a solution for this yet.
+- Automatically handle the cookie popup window when the browser opens.
 - Figure out an easier way to compute the maximum 'acceptable load more times'.
 
 
