@@ -36,12 +36,12 @@ no_of_articles_wanted = int(input("How many headlines?\n"))
 # If 'Custom' then the start and end dates will be asked
 while True:
     time_select = str(input("Select a time period ('Any' or 'Custom'): "))
-    if time_select in ["Any", "any", "ANY"]:
+    if time_select.casefold() == "any":
         period = "whenever"
         query_url = "https://www.hs.fi/haku/?query=" + search_term \
                     + "&category=kaikki&period=whenever"
         break
-    elif time_select in ["Custom", "custom", "CUSTOM"]:
+    elif time_select.casefold() == "custom":
         start_date = str(input("Select start date (format YYYY-MM-DD): "))
         end_date = str(input("Select end date (format YYYY-MM-DD): "))
         query_url = "https://www.hs.fi/haku/?query=" + search_term \
