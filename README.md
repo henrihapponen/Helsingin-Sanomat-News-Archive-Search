@@ -1,4 +1,4 @@
-# Helsingin Sanomat News Archive Search Automation and Scraper
+# Helsingin Sanomat News Archive Search Automation
 
 This script allows to automate queries and download news headline data from Helsingin Sanomat News Archive. Only the headline (title/heading) and the time of publishing are returned.
 
